@@ -54,7 +54,9 @@ public class Main {
 
 //        System.out.println(human1);
 
-        System.out.println(human2.getInfo());
+        System.out.println(human6.getInfo());
+        System.out.println("----------------");
+        System.out.println(human1.getSnils());
         System.out.println("----------------");
 
 

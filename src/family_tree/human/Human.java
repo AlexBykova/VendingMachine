@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Human {
 
-    private float SNILS;
+    private float snils; // Здесь были заглавные т.к. это аббревиатура. И она была написана так чисто на автомате
     private String name;
     private Gender gender;
     private String birthday;
@@ -15,8 +15,8 @@ public class Human {
 
 
 
-    public Human(float SNILS, String name, Gender gender, String birthday, String deathday) {
-        this.SNILS = SNILS;
+    public Human(float snils, String name, Gender gender, String birthday, String deathday) {
+        this.snils = snils;
         this.name = name;
         this.gender = gender;
         this.birthday = birthday;
@@ -33,13 +33,13 @@ public class Human {
         this.children = children;
     }
 
-    public float getSNILS(){
-        return SNILS;
+    public float getSnils(){
+        return snils;
     }
 
     @Override
     public String toString() {
-        return "Имя: " + name + ", СНИЛС: " + SNILS;
+        return "Имя: " + name + ", СНИЛС: " + snils;
     }
 
     public String getInfo(){

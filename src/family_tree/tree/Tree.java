@@ -8,20 +8,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Tree {
-    List<Human> peopleList;
+    private List<Human> peopleList;
 
     public Tree() {
         peopleList = new ArrayList<>();
     }
 
-//    public Human getPeopleBySNILS (Float SNILS){
-//        for (Human people: peopleList){
-//            if (people.getSNILS().equals(SNILS)){
-//                return people;
-//            }
-//        }
-//        return null;
-//    }
+    public Human getPeopleBySnils (Float snils) {
+        for (Human people: peopleList){
+            if (people.getSnils() == snils){
+                return people;
+            }
+        }
+        return null;
+    }
 
     public void addPeople(Human people) {
         peopleList.add(people);
