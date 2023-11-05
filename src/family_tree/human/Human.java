@@ -1,8 +1,10 @@
 package family_tree.human;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
-public class Human {
+public class Human implements Serializable {
 
     private float snils; // Здесь были заглавные т.к. это аббревиатура. И она была написана так чисто на автомате
     private String name;
@@ -57,5 +59,16 @@ public class Human {
             stringBuilder.append ("Дети: " + children + "\n");
         }
             return stringBuilder.toString();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Human)){
+            return false;
+        }
+        Human human = (Human) obj;
+        return human.getSnils() == getSnils();
     }
 }

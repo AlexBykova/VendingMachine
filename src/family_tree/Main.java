@@ -3,13 +3,17 @@ package family_tree;
 import family_tree.human.Gender;
 import family_tree.human.Human;
 import family_tree.tree.Tree;
+import family_tree.writer.FileHandler;
 
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Tree familyTree = new Tree();
+        Tree familyTree1 = new Tree();
+
 
 
         Human human1 = new Human(769375, "Максим Р", Gender.Male, "04.11.1995", null);
@@ -53,16 +57,34 @@ public class Main {
 
 
 //        System.out.println(human1);
-
-        System.out.println(human6.getInfo());
-        System.out.println("----------------");
-        System.out.println(human1.getSnils());
-        System.out.println("----------------");
-
-
-        System.out.println(familyTree.getPeopleListInfo());
+//
+//        System.out.println(human6.getInfo());
+//        System.out.println("----------------");
+//        System.out.println(human1.getSnils());
+//        System.out.println("----------------");
+//
+//
+//        System.out.println(familyTree.getPeopleListInfo());
+//
+//
+//        System.out.println("============");
+//        System.out.println(familyTree.getPeopleBySnils(769375F));
+        System.out.println("~~~~~~~~~~~~~~");
+        save(familyTree);
+        familyTree1 = load();
+        System.out.println(familyTree1.getPeopleListInfo());
 
     }
 
-
+    private static void save(Tree familyTree) {
+        FileHandler fileHandler = new FileHandler();
+        String filePath = "src/family_tree/writer/tree.txt";
+        fileHandler.save(familyTree, filePath);
+    }
+    private static Tree load (){
+        FileHandler fileHandler = new FileHandler();
+        String filePath = "src/family_tree/writer/tree.txt";
+        return (Tree) (fileHandler.read(filePath));
+    }
 }
+

@@ -1,13 +1,12 @@
 package family_tree.tree;
 
 import family_tree.human.Human;
-import ru.gb.vending_machine.product.Product;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Tree {
+public class Tree implements Serializable {
     private List<Human> peopleList;
 
     public Tree() {
@@ -36,4 +35,6 @@ public class Tree {
         }
         return stringBuilder.toString();
     }
+
+
 }
